@@ -1,0 +1,17 @@
+name: Build container and deploy application
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Build docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: 
+            - $${{ secrets.GCP_ARTIFACT_REPOSITORY_URL }}/quickscope:latest
+            - $${{ secrets.GCP_ARTIFACT_REPOSITORY_URL }}/quickscope:{{ env.GITHUB_SHA_SHORT }}
