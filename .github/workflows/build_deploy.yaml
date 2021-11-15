@@ -25,3 +25,4 @@ jobs:
           service: quickscope
           image: ${{ env.IMAGE_TAG }}
           credentials: ${{ secrets.GCP_SA_KEY }}
+          region: australia-southeast1
