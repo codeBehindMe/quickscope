@@ -14,5 +14,5 @@ jobs:
       - name: Build docker image
         uses: docker/build-push-action@v2
         with:
-          push: false
+          push: true
           tags: australia-southeast1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/main/quickscope:latest
