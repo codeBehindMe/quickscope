@@ -15,5 +15,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: false
-          tags: 
-            - australia-southeast1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/main/quickscope:latest
+          tags: australia-southeast1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/main/quickscope:latest
