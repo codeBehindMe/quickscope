@@ -1,5 +1,5 @@
 name: Build container and deploy application
-on: workflow_dispatch
+on: push
 jobs:
   build-push:
     runs-on: ubuntu-latest
