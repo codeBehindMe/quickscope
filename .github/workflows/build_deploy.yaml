@@ -14,10 +14,3 @@ jobs:
           registry: australia-southeast1-docker.pkg.dev
           username: _json_key
           password: $${{secrets.GCP_GAR_ADMIN }}
-      - name: Build docker image
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: 
-            - $${{ secrets.GCP_ARTIFACT_REPOSITORY_URL }}/quickscope:latest
-            - $${{ secrets.GCP_ARTIFACT_REPOSITORY_URL }}/quickscope:{{ env.GITHUB_SHA_SHORT }}
