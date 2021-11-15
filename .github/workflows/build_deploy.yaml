@@ -10,4 +10,10 @@ jobs:
         with:
           registry: australia-southeast1-docker.pkg.dev
           username: _json_key
-          password: ${{secrets.GCP_SA_KEY }}
+          password: ${{ secrets.GCP_SA_KEY }}
+      - name: Build docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: false
+          tags: 
+            - australia-southeast1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/main/quickscope:latest
