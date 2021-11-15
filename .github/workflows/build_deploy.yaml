@@ -10,4 +10,4 @@ jobs:
         with:
           registry: australia-southeast1-docker.pkg.dev
           username: _json_key
-          password: $${{secrets.GCP_GAR_ADMIN }}
+          password: ${{secrets.GCP_SA_KEY }}
