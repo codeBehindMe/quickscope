@@ -21,8 +21,8 @@ jobs:
       - name: Deploy to Cloud Run
         id: deploy
         uses: google-github-actions/deploy-cloudrun@main
-        working-directory: infrac
         with:
+          working-directory: infrac
           credentials: ${{ secrets.GCP_SA_KEY }}
           region: australia-southeast1
           metadata: service.yaml
