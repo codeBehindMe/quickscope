@@ -7,8 +7,6 @@ jobs:
     env:
       IMAGE_TAG: australia-southeast1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/main/quickscope:latest
     steps:
-      - name:
-        run: pwd
       - name: Login to GAR 
         uses: docker/login-action@v1
         with:
@@ -24,7 +22,6 @@ jobs:
         id: deploy
         uses: google-github-actions/deploy-cloudrun@main
         with:
-          working-directory: infrac
           credentials: ${{ secrets.GCP_SA_KEY }}
           region: australia-southeast1
           metadata: service.yaml
