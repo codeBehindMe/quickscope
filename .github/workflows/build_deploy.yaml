@@ -7,14 +7,14 @@ jobs:
     env:
       IMAGE_TAG: australia-southeast1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/main/quickscope:latest
     steps:
+      - name:
+        run: pwd
       - name: Login to GAR 
         uses: docker/login-action@v1
         with:
           registry: australia-southeast1-docker.pkg.dev
           username: _json_key
           password: ${{ secrets.GCP_SA_KEY }}
-      - name:
-        run: pwd
       - name: Build docker image
         uses: docker/build-push-action@v2
         with:
