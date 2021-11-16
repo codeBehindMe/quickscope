@@ -1,5 +1,8 @@
 name: Build container and deploy application
-on: push
+on: 
+  push:
+    branches:
+      - main
 jobs:
   build-push:
     runs-on: ubuntu-latest
