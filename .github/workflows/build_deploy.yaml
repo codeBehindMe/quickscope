@@ -22,6 +22,6 @@ jobs:
         id: deploy
         uses: google-github-actions/deploy-cloudrun@main
         with:
+          service: quickscope
           credentials: ${{ secrets.GCP_SA_KEY }}
           region: australia-southeast1
-          metadata: quickscope/service.yaml
