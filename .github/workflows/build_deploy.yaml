@@ -23,4 +23,5 @@ jobs:
         uses: google-github-actions/deploy-cloudrun@main
         with:
           credentials: ${{ secrets.GCP_SA_KEY }}
-          metadata: infrac/service.yaml
+          region: australia-southeast1
+          metadata: ./infrac/service.yaml
