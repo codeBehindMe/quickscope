@@ -24,4 +24,4 @@ jobs:
         with:
           credentials: ${{ secrets.GCP_SA_KEY }}
           region: australia-southeast1
-          metadata: ./infrac/service.yaml
+          metadata: ../infrac/service.yaml
